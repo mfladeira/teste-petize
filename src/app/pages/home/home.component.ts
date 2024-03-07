@@ -45,6 +45,7 @@ export class HomeComponent {
 
   search() {
     const filter = this.getFilter();
+    this.page = 0;
     this.getPeople(filter);
   }
 

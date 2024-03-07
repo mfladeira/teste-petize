@@ -33,6 +33,7 @@
     min-width: 600px;
     max-width: 1000px;
     display: flex;
+    position: relative;
 
     .personImg {
       width: 40%;
@@ -55,6 +56,20 @@
 
       .bold {
         font-weight: 700;
+      }
+    }
+
+    .wpp {
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .7;
+        transition: .3s;
       }
     }
   }

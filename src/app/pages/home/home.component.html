@@ -33,6 +33,7 @@
         <a (click)="onClickPreviousPage()" class="paginationBtn"
             [ngStyle]="page <= 0 ? {'pointer-events': 'none', 'background-color': ''} : null">&lt;</a>
         <span>{{page}} / {{maxPage}}</span>
-        <a (click)="onClickNextPage()" class="paginationBtn" >&gt;</a>
+        <a (click)="onClickNextPage()" class="paginationBtn"
+            [ngStyle]="page === maxPage ? {'pointer-events': 'none', 'background-color': ''} : null">&gt;</a>
     </section>
 </main>
