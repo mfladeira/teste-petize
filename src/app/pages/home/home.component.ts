@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { InputComponent } from '../../components/input/input.component';
 import { CardComponent } from '../../components/card/card.component';
 import { ApiSearchPersonService } from '../../services/api-search-person.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [InputComponent, CardComponent, NgFor, NgIf],
+  imports: [InputComponent, CardComponent, NgFor, NgIf, NgStyle],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -17,13 +17,13 @@ export class HomeComponent {
   endAge = "";
   selectedGender = 'empty';
   listOfPeople = [];
+  page = 0;
+  maxPage = 0;
 
   constructor(private apiSearch: ApiSearchPersonService) { }
 
   ngOnInit() {
-    // this.apiSearch.getPeople('').subscribe((response: any) => {
-    //   this.listOfPeople = response.content;
-    // })
+    this.getPeople('&pagina=0')
   }
 
   onChangeNameInput(value: string) {
@@ -36,16 +36,21 @@ export class HomeComponent {
     this.endAge = value;
   }
 
-  search() {
-    const filter = this.getFilter();
+  getPeople(filter: string) {
     this.apiSearch.getPeople(filter).subscribe((response: any) => {
       this.listOfPeople = response?.content;
+      this.maxPage = response?.totalPages - 1
     })
   }
 
-  getFilter(){
+  search() {
+    const filter = this.getFilter();
+    this.getPeople(filter);
+  }
+
+  getFilter() {
     let filter = '';
-    
+
     if (this.nameInput !== '') {
       filter += `&nome=${this.nameInput.trim()}`;
     }
@@ -63,5 +68,17 @@ export class HomeComponent {
     }
 
     return filter;
+  }
+
+  onClickNextPage() {
+    const filter = `&pagina=${this.page + 1}${this.getFilter()}`
+    this.page += 1;
+    this.getPeople(filter);
+  }
+
+  onClickPreviousPage() {
+    const filter = `&pagina=${this.page - 1}${this.getFilter()}`;
+    this.page += -1;
+    this.getPeople(filter);
   }
 }

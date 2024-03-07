@@ -26,7 +26,13 @@
     </header>
 
     <section class="container">
-        <app-card *ngFor="let item of listOfPeople" [imgSrc]="item['urlFoto']" [name]="item['nome']"
-            [age]="item['idade']" [gender]="item['sexo']"></app-card>
+        <app-card *ngFor="let item of listOfPeople" [person]="item"></app-card>
+    </section>
+
+    <section class="pagination">
+        <a (click)="onClickPreviousPage()" class="paginationBtn"
+            [ngStyle]="page <= 0 ? {'pointer-events': 'none', 'background-color': ''} : null">&lt;</a>
+        <span>{{page}} / {{maxPage}}</span>
+        <a (click)="onClickNextPage()" class="paginationBtn" >&gt;</a>
     </section>
 </main>
