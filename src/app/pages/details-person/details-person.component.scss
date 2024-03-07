@@ -1,0 +1,61 @@
+.detailPerson {
+  height: 100vh;
+  background: linear-gradient(to right,
+      #000000 0,
+      #333333 40%,
+      #333333 60%,
+      #000000 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .backIcon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+      transition: .3s;
+    }
+  }
+
+  .cardPerson {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    height: 50%;
+    width: 70%;
+    min-width: 600px;
+    max-width: 1000px;
+    display: flex;
+
+    .personImg {
+      width: 40%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .containerInfo {
+      padding: 20px;
+
+      p {
+        font-family: "Inter", sans-serif;
+        color: #464646;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+    }
+  }
+}

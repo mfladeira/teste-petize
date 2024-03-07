@@ -1,0 +1,29 @@
+<section class="detailPerson" *ngIf="personDetails">
+    <a routerLink="/">
+        <img src="../../../assets/backIcon.png" alt="Ícone de voltar" class="backIcon">
+    </a>
+    
+    <div class="cardPerson">
+        <img [src]="personDetails.urlFoto" alt="Imagem de uma pessoa desaparecida" class="personImg"
+            *ngIf="personDetails.urlFoto !== null; else nophoto">
+        <ng-template #nophoto>
+            <img src="../../../assets/nophoto.jpeg" alt="Imagem mostrando que não tem foto" class="personImg" style="object-fit: cover;">
+        </ng-template>
+
+        <div class="containerInfo">
+            <p><span class="bold">Nome:</span> {{personDetails['nome']}}</p>
+            <p><span class="bold">Idade:</span> {{personDetails['idade']}}</p>
+            <p><span class="bold">Sexo:</span> {{personDetails['sexo']}}</p>
+            <p><span class="bold">Data do desaparecimento:</span>
+                {{personDetails['ultimaOcorrencia']['dtDesaparecimento'] | date: 'dd/MM/yy' }}</p>
+            <p><span class="bold">Local do desaparecimento:</span>
+                {{personDetails['ultimaOcorrencia']['localDesaparecimentoConcat']}}</p>
+            <div *ngIf="personDetails.ultimaOcorrencia.ocorrenciaEntrevDesapDTO">
+                <p><span class="bold">Informação:</span>
+                    {{personDetails['ultimaOcorrencia']['ocorrenciaEntrevDesapDTO']['informacao']}}</p>
+                <p><span class="bold">Vestimentas:</span>
+                    {{personDetails['ultimaOcorrencia']['ocorrenciaEntrevDesapDTO']['vestimentasDesaparecido']}}</p>
+            </div>
+        </div>
+    </div>
+</section>
