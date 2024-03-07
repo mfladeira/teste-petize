@@ -1,0 +1,48 @@
+<main class="home">
+    <header class="header">
+        <h1 class="title">Lista de Pessoas Desaparecidas</h1>
+        <div class="containerInputs">
+            <app-input [inputvalue]="nameInput" (eventEmitter)="onChangeNameInput($event)"
+                placeholder="Digite o nome da pessoa"></app-input>
+
+            <div class="containerAge">
+                <app-input [inputvalue]="initialAge" (eventEmitter)="onChangeInitialAge($event)"
+                    placeholder="Faixa Idade inicial" type="number"></app-input>
+                <app-input [inputvalue]="endAge" (eventEmitter)="onChangeEndAge($event)" placeholder="Faixa Idade Final"
+                    type="number"></app-input>
+            </div>
+
+            <div class="containerGender">
+                <div>
+                    <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'Masculino'">
+                    <label for="man" class="label">Masculino</label><br>
+                    <input type="radio" id="woman" name="fav_language" (change)="selectedGender = 'Ferminino'">
+                    <label for="woman" class="label">Feminino</label><br>
+                </div>
+
+                <button class="btn" (click)="search()">Pesquisar</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+        </div>
+        <div style="display: flex;  justify-content: space-between; margin-bottom: 30px;">
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+            <app-card></app-card>
+        </div>
+    </section>
+</main>

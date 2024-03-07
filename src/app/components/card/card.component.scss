@@ -1,0 +1,39 @@
+.card {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.847);
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .personImage {
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .text {
+    font-family: "Inter", sans-serif;
+    padding: 0 15px;
+    margin-top: 5px;
+  }
+
+  .button {
+    font-family: "Inter", sans-serif;
+    padding: 5px 15px;
+    background-color: rgb(83, 124, 200);
+    color: white;
+    margin-left: 15px;
+    width: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+  }
+}
