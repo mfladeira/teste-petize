@@ -96,6 +96,20 @@
       background-color: #ddd;
     }
   }
+}
 
+@media (max-width: 700px) {
+  .home {
+    .header {
+      padding: 26px 5%;
+      
+      .containerInputs {
+        width: 100%;
+      }
+    }
 
+    .container {
+      justify-content: center;
+    }
+  }
 }
