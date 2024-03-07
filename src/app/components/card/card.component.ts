@@ -1,14 +1,9 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { Person } from '../../interfaces/Person';
 
-interface Person {
-  id: number;
-  urlFoto: string;
-  nome: string;
-  idade: number;
-  sexo: string;
-}
+
 @Component({
   selector: 'app-card',
   standalone: true,

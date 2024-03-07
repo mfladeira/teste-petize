@@ -25,11 +25,11 @@
         </div>
     </header>
 
-    <section class="container">
+    <section class="container" *ngIf="listOfPeople.length > 0">
         <app-card *ngFor="let item of listOfPeople" [person]="item"></app-card>
     </section>
 
-    <section class="pagination">
+    <section class="pagination" *ngIf="listOfPeople.length > 0">
         <a (click)="onClickPreviousPage()" class="paginationBtn"
             [ngStyle]="page <= 0 ? {'pointer-events': 'none', 'background-color': ''} : null">&lt;</a>
         <span>{{page}} / {{maxPage}}</span>

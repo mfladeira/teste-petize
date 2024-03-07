@@ -57,12 +57,9 @@
 
   .container {
     display: flex;
-    justify-content: space-between;
-    // width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
-    // flex-direction: column;
     background-color: #e8e8e8;
-    // height: calc(100vh - 271px);
     padding: 30px;
   }
 

@@ -3,6 +3,7 @@ import { InputComponent } from '../../components/input/input.component';
 import { CardComponent } from '../../components/card/card.component';
 import { ApiSearchPersonService } from '../../services/api-search-person.service';
 import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { PersonDetails } from '../../interfaces/PersonDetails';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +17,14 @@ export class HomeComponent {
   initialAge = "";
   endAge = "";
   selectedGender = 'empty';
-  listOfPeople = [];
+  listOfPeople: PersonDetails[] = [];
   page = 0;
   maxPage = 0;
 
   constructor(private apiSearch: ApiSearchPersonService) { }
 
   ngOnInit() {
-    this.getPeople('&pagina=0')
+    this.getPeople('&pagina=0');
   }
 
   onChangeNameInput(value: string) {

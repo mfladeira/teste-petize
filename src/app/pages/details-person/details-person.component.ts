@@ -2,23 +2,8 @@ import { Component, Input } from '@angular/core';
 import { ApiSearchPersonService } from '../../services/api-search-person.service';
 import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PersonDetails } from '../../interfaces/PersonDetails';
 
-export interface PersonDetails {
-  "id": number,
-  "nome": string,
-  "idade": number,
-  "sexo": string,
-  "urlFoto": string,
-  "ultimaOcorrencia": {
-    "dtDesaparecimento": string,
-    "localDesaparecimentoConcat": string,
-    "ocorrenciaEntrevDesapDTO"?: {
-      "informacao": string,
-      "vestimentasDesaparecido": string
-    }
-  },
-
-}
 @Component({
   selector: 'app-details-person',
   standalone: true,
