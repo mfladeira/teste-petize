@@ -14,9 +14,9 @@
 
             <div class="containerGender">
                 <div>
-                    <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'Masculino'">
+                    <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'MASCULINO'">
                     <label for="man" class="label">Masculino</label><br>
-                    <input type="radio" id="woman" name="fav_language" (change)="selectedGender = 'Ferminino'">
+                    <input type="radio" id="woman" name="fav_language" (change)="selectedGender = 'FEMININO'">
                     <label for="woman" class="label">Feminino</label><br>
                 </div>
 
@@ -26,23 +26,7 @@
     </header>
 
     <section class="container">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-        </div>
-        <div style="display: flex;  justify-content: space-between; margin-bottom: 30px;">
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-            <app-card></app-card>
-        </div>
+        <app-card *ngFor="let item of listOfPeople" [imgSrc]="item['urlFoto']" [name]="item['nome']"
+            [age]="item['idade']" [gender]="item['sexo']"></app-card>
     </section>
 </main>
