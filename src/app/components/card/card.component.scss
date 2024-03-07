@@ -1,5 +1,5 @@
 .card {
-  width: 300px;
+  width: 280px;
   background-color: rgba(255, 255, 255, 0.847);
   height: 350px;
   border-radius: 10px;
@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 16px 10px;
 
   .personImage {
     height: 200px;
@@ -19,6 +20,8 @@
     font-family: "Inter", sans-serif;
     padding: 0 15px;
     margin-top: 5px;
+    display: block;
+    font-size: 14px;
   }
 
   .button {
