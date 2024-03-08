@@ -34,7 +34,9 @@
     max-width: 1000px;
     display: flex;
     position: relative;
-
+    animation-name: slowAppear;
+    animation-duration: .6s;
+  
     .personImg {
       width: 40%;
       height: 100%;

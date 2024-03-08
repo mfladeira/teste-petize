@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 16px 10px;
+  animation-name: slowAppear;
+  animation-duration: .8s;
 
   .personImage {
     height: 200px;
