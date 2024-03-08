@@ -7,24 +7,28 @@
         <div>
             <h1 class="title">Lista de Pessoas Desaparecidas</h1>
             <div class="containerInputs">
-                <app-input [inputvalue]="nameInput" (eventEmitter)="onChangeNameInput($event)"
-                    placeholder="Digite o nome da pessoa"></app-input>
-    
+                <app-input
+                    [inputProps]="{ 'inputvalue': nameInput, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Digite o nome da pessoa', 'type': 'text' }"
+                    (eventEmitter)="onChangeNameInput($event)"></app-input>
+
                 <div class="containerAge">
-                    <app-input [inputvalue]="initialAge" (eventEmitter)="onChangeInitialAge($event)"
-                        placeholder="Faixa Idade inicial" type="number" style="margin-right: 10px;"></app-input>
-                    <app-input [inputvalue]="endAge" (eventEmitter)="onChangeEndAge($event)" placeholder="Faixa Idade Final"
-                        type="number"></app-input>
+                    <app-input
+                        [inputProps]="{ 'inputvalue': initialAge, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Faixa Idade Inicial', 'type': 'number' }"
+                        (eventEmitter)="onChangeInitialAge($event)"></app-input>
+                    <app-input
+                        [inputProps]="{ 'inputvalue': endAge, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Faixa Idade Final', 'type': 'number' }"
+                        (eventEmitter)="onChangeEndAge($event)"></app-input>
                 </div>
-    
+
                 <div class="containerGender">
                     <div>
                         <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'MASCULINO'">
                         <label for="man" class="label">Masculino</label><br>
-                        <input style="margin-top: 10px;" type="radio" id="woman" name="fav_language" (change)="selectedGender = 'FEMININO'">
+                        <input style="margin-top: 10px;" type="radio" id="woman" name="fav_language"
+                            (change)="selectedGender = 'FEMININO'">
                         <label for="woman" class="label">Feminino</label><br>
                     </div>
-    
+
                     <button class="btn" (click)="search()">Pesquisar</button>
                 </div>
             </div>

@@ -9,10 +9,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './input.component.scss'
 })
 export class InputComponent {
-  @Input() inputvalue = "";
-  @Input() stylesProps = {};
-  @Input() placeholder = "";
-  @Input() type: 'text' | 'number' = "text";
+  @Input() inputProps = {
+    inputvalue: "",
+    stylesProps: {},
+    placeholder: "",
+    type: "text"
+  }
+  
   @Output() eventEmitter = new EventEmitter();
 
   onChangeInputValue(event: KeyboardEvent) {

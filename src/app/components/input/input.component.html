@@ -1,2 +1,2 @@
-<input type="text" class="input" [value]="inputvalue" (keyup)="onChangeInputValue($event)" [ngStyle]="stylesProps"
-    [placeholder]="placeholder" [type]="type">
+<input type="text" class="input" [value]="inputProps['inputvalue']" (keyup)="onChangeInputValue($event)"
+    [ngStyle]="inputProps['stylesProps']" [placeholder]="inputProps['placeholder']" [type]="inputProps['type']">
