@@ -3,6 +3,7 @@ import { ApiSearchPersonService } from '../../services/api-search-person.service
 import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PersonDetails } from '../../interfaces/PersonDetails';
+import { FacebookService } from '../../services/facebook.service';
 
 @Component({
   selector: 'app-details-person',
@@ -23,6 +24,10 @@ export class DetailsPersonComponent {
     });
   }
 
-  constructor(private apiSearch: ApiSearchPersonService) { }
+  constructor(private apiSearch: ApiSearchPersonService, private facebookService: FacebookService) { }
 
+  share() {
+    const urlToShare = window.location.href;
+    this.facebookService.shareWithFacebook(urlToShare);
+  }
 }

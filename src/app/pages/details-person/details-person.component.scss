@@ -74,6 +74,20 @@
         transition: .3s;
       }
     }
+
+    .facebook {
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      bottom: 15px;
+      right: 70px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .7;
+        transition: .3s;
+      }
+    }
   }
 }
 
