@@ -1,26 +1,32 @@
 <main class="home">
     <header class="header">
-        <h1 class="title">Lista de Pessoas Desaparecidas</h1>
-        <div class="containerInputs">
-            <app-input [inputvalue]="nameInput" (eventEmitter)="onChangeNameInput($event)"
-                placeholder="Digite o nome da pessoa"></app-input>
-
-            <div class="containerAge">
-                <app-input [inputvalue]="initialAge" (eventEmitter)="onChangeInitialAge($event)"
-                    placeholder="Faixa Idade inicial" type="number" style="margin-right: 10px;"></app-input>
-                <app-input [inputvalue]="endAge" (eventEmitter)="onChangeEndAge($event)" placeholder="Faixa Idade Final"
-                    type="number"></app-input>
-            </div>
-
-            <div class="containerGender">
-                <div>
-                    <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'MASCULINO'">
-                    <label for="man" class="label">Masculino</label><br>
-                    <input style="margin-top: 10px;" type="radio" id="woman" name="fav_language" (change)="selectedGender = 'FEMININO'">
-                    <label for="woman" class="label">Feminino</label><br>
+        <div class="containerLogo">
+            <img src="../../../assets/logo.png" alt="Logo da Policia" class="logo">
+            <h3 class="report">Denuncie: 197/181 | 3613-6981</h3>
+        </div>
+        <div>
+            <h1 class="title">Lista de Pessoas Desaparecidas</h1>
+            <div class="containerInputs">
+                <app-input [inputvalue]="nameInput" (eventEmitter)="onChangeNameInput($event)"
+                    placeholder="Digite o nome da pessoa"></app-input>
+    
+                <div class="containerAge">
+                    <app-input [inputvalue]="initialAge" (eventEmitter)="onChangeInitialAge($event)"
+                        placeholder="Faixa Idade inicial" type="number" style="margin-right: 10px;"></app-input>
+                    <app-input [inputvalue]="endAge" (eventEmitter)="onChangeEndAge($event)" placeholder="Faixa Idade Final"
+                        type="number"></app-input>
                 </div>
-
-                <button class="btn" (click)="search()">Pesquisar</button>
+    
+                <div class="containerGender">
+                    <div>
+                        <input type="radio" id="man" name="fav_language" (change)="selectedGender = 'MASCULINO'">
+                        <label for="man" class="label">Masculino</label><br>
+                        <input style="margin-top: 10px;" type="radio" id="woman" name="fav_language" (change)="selectedGender = 'FEMININO'">
+                        <label for="woman" class="label">Feminino</label><br>
+                    </div>
+    
+                    <button class="btn" (click)="search()">Pesquisar</button>
+                </div>
             </div>
         </div>
     </header>

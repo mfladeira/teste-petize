@@ -1,20 +1,35 @@
 .home {
-
-
   .header {
-
     padding: 26px 120px;
     background: linear-gradient(to right, #000000 0, #333333 40%, #333333 60%, #000000 100%);
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
     .title {
       text-align: center;
       color: #e8e8e8;
       font-family: sans-serif;
-      font-size: 40px;
+      font-size: 32px;
       margin-bottom: 22px;
+    }
+
+    .containerLogo {
+      margin-right: 20px;
+
+      .logo {
+        width: 400px;
+      }
+
+      .report {
+        color: white;
+        text-align: right;
+        font-size: calc(16px + 0.5vw);
+        font-family: 'Inter';
+        font-weight: 200;
+        margin-top: 25px;
+        padding-right: 10px;
+      }
     }
 
     .containerInputs {
@@ -98,6 +113,30 @@
   }
 }
 
+@media (max-width: 560px) {
+  .home {
+
+    .header {
+      .title {
+        font-size: 21px;
+      }
+
+      .containerLogo {
+        margin-right: 0;
+
+        .logo {
+          width: 300px;
+        }
+
+        .report {
+          font-size: 14px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 700px) {
   .home {
     .header {
@@ -110,6 +149,16 @@
 
     .container {
       justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .header {
+    flex-direction: column;
+
+    .containerLogo {
+      margin-bottom: 30px;
     }
   }
 }
